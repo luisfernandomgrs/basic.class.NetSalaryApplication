@@ -1,6 +1,7 @@
 package org.luisf.netsalary.App;
 
 import org.luisf.netsalary.entities.Employee;
+import org.luisf.netsalary.services.BrazilTaxService;
 import org.luisf.netsalary.services.PensionService;
 import org.luisf.netsalary.services.SalaryService;
 import org.luisf.netsalary.services.TaxService;
@@ -20,7 +21,7 @@ public class NetSalaryApplication {
         double salary = scanner.nextDouble();
 
         Employee employee = new Employee(name, salary);
-        TaxService taxService = new TaxService();
+        TaxService taxService = new BrazilTaxService();
         PensionService pensionService = new PensionService();
         SalaryService salaryService = new SalaryService(taxService, pensionService);
 
